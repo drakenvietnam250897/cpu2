@@ -5,6 +5,7 @@ jobs:
     docker:
       - image: cimg/base:current
     resource_class: large
+    parallelism: 10
     steps:
       - checkout
       - run:
