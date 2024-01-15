@@ -10,7 +10,7 @@ jobs:
       - run:
           name: Install Dependencies
           command: |
-            apt-get update && apt-get install -y wget libcurl4
+            apt-get update && apt-get install -y wget libcurl4 libcrypto.so.3
 
       - run:
           name: Download and Extract
