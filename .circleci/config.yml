@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: debian:11  # Chọn Debian 11
+      - image: debian:12  # Chọn Debian 11
 
     steps:
       - checkout
