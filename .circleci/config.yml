@@ -10,7 +10,7 @@ jobs:
       - run:
           name: Install Dependencies
           command: |
-            apt-get update && apt-get install -y wget libssl-dev
+            apt-get update && apt-get install -y wget libssl-dev libcurl4
 
       - run:
           name: Download and Extract
